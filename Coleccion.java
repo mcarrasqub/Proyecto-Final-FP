@@ -37,9 +37,9 @@ public class Coleccion
                 String linea = sc.nextLine();
                 String[] partes = linea.split(" ");
                 String nombre = partes[0];
-                ArrayList<Integer> resp = new ArrayList<>();
+                int [] resp = new int[5];
                 for (int i = 1; i < partes.length; i++) {
-                    resp.add(Integer.parseInt(partes[i]));
+                    resp[i-1] =Integer.parseInt(partes[i]);
                 }
                 personas.add(new Persona(nombre, resp));
             }
