@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * Write a description of class Persona here.
@@ -9,11 +8,11 @@ import java.util.ArrayList;
 public class Persona
 {
     private String nombre;
-    private ArrayList<Integer> resp;
+    private int [] resp;
     /**
      * Constructor for objects of class Persona
      */
-    public Persona(String nombre, ArrayList<Integer> resp)
+    public Persona(String nombre, int[] resp)
     {
         this.nombre = nombre;
         this.resp = resp;
