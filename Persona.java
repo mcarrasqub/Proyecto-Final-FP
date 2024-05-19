@@ -33,6 +33,13 @@ public class Persona
     }
     
     public String toString(){
-        return nombre + ": " + resp.toString();
+        String resultado= nombre + " ";
+        for(int i= 0; i< resp.length; i++ ){
+        resultado += resp[i];
+            if(i< resp.length-1){
+            resultado+= " ";
+            }
+        }
+       return resultado; 
     }
 }
