@@ -5,6 +5,8 @@ import java.io.*;
 /**
  * La clase Coleccion representa una colección de personas y proporciona métodos para gestionar y analizar datos de la encuesta.
  * 
+ *@param personas ArrayList de personas
+ *
  * @author Mariana Carrasquilla
  * @author Jhon Anderson Marin
  * @version 1.0
