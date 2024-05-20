@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
-import java.io.FileWriter;
 
 /**
- * Write a description of class Afinidad here.
+ * La clase Coleccion representa una colección de personas y proporciona métodos para gestionar y analizar datos de la encuesta.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mariana Carrasquilla
+ * @author Jhon Anderson Marin
+ * @version 1.0
  */
 public class Coleccion
 {
@@ -15,22 +15,24 @@ public class Coleccion
     private ArrayList<Persona> personas;
 
     /**
-     * Constructor for objects of class Afinidad
+     * Constructor de la clase Coleccion que inicializa la lista de personas.
      */
     public Coleccion()    {
         personas = new ArrayList<>();
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Agrega una persona a la colección.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param persona La persona a agregar a la colección.
      */
     public void agregarPersona(Persona persona) {
         personas.add(persona);
     }
 
+    /**
+     * Lee los datos de un archivo de texto y crea objetos Persona con esa información, separando las respuestas con espacios.
+     */
     public void leerDatos() {
         personas.clear();
         try (Scanner sc = new Scanner(new FileReader("encuesta.txt"))) {
@@ -40,7 +42,7 @@ public class Coleccion
                 String nombre = partes[0];
                 int[] resp = new int[5];
                 for (int i = 1; i < partes.length; i++) {
-                    resp[i-1] = Integer.parseInt(partes[i]);
+                    resp[i-1]= Integer.parseInt(partes[i]);
                 }
                 personas.add(new Persona(nombre, resp));
             }
@@ -50,6 +52,9 @@ public class Coleccion
         }
     }
 
+    /**
+     * Escribe los datos de las personas que están almacenadas en el ArrayList en un archivo de texto.
+     */
     public void escribirDatos() {
         File archivo = new File("encuesta.txt");
         try { 
@@ -62,8 +67,16 @@ public class Coleccion
         } catch (IOException e){
             System.out.println("Archivo no encontrado");
         }
+
     }
     
+    /**
+     * Calcula la afinidad entre dos personas basado en sus respuestas.
+     * 
+     * @param p1 La primera persona.
+     * @param p2 La segunda persona.
+     * @return La afinidad entre las dos personas.
+     */
     public double match(Persona p1, Persona p2){
         int[] arrP1 = p1.getRespuestas();
         int[] arrP2 = p2.getRespuestas();
@@ -78,6 +91,13 @@ public class Coleccion
         double resultado = sumatoriaMultiplicacion / (Math.sqrt(pitagorasP1) * Math.sqrt(pitagorasP2));
         return resultado;
     }
+
+    /**
+     * Busca una persona en la colección por su nombre.
+     * 
+     * @param nombre El nombre de la persona a buscar.
+     * @return La posición de la persona en la colección, o -1 si no se encuentra.
+     */
     public int buscarPersona(String nombre){
         int encontrado = -1;
         for(int i = 0; i < personas.size(); i++){
@@ -88,6 +108,12 @@ public class Coleccion
         }
         return encontrado;
     }
+
+    /**
+     * Obtiene la lista de personas en la colección.
+     * 
+     * @return La lista de personas en la colección.
+     */
     public ArrayList<Persona> getPersonas(){
         return this.personas;
     }
