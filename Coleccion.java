@@ -50,5 +50,17 @@ public class Coleccion
     }
 
     public void escribirDatos() {
+        File archivo = new File("encuesta.txt");
+        try { 
+            FileWriter escribir = new FileWriter(archivo);
+            for(int i = 0; i < personas.size(); i++){
+                escribir.write(personas.get(i).toString());
+                escribir.write('\n');
+            }
+            escribir.close();
+        } catch (IOException e){
+            System.out.println("Archivo no encontrado");
+        }
+
     }
 }
