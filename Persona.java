@@ -1,45 +1,63 @@
-
+import java.util.Arrays;
 /**
- * Write a description of class Persona here.
+ * La clase Persona representa una persona con un nombre y un conjunto de respuestas a preguntas.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @param nombre Nombre de una persona.
+ * @param resp Arreglo de enteros con referencia a las respuestas de las personas.
+ * 
+ * @author Mariana Carrasquilla
+ * @author Jhon Anderson Marin
+ * @version 1.0
  */
 public class Persona
 {
     private String nombre;
-    private int [] resp;
+    private int[] resp;
     /**
-     * Constructor for objects of class Persona
+     * Constructor de objectos de la clase Persona. Asigna los parámetros del constructor a los parámetros de la clase y a su vez inicializa el arreglo con tamaño 5 
+     * 
+     * @param nombre El nombre de la persona.
+     * @param resp   Un arreglo de enteros que representa las respuestas de la persona.
+
      */
     public Persona(String nombre, int[] resp)
     {
         this.nombre = nombre;
+        this.resp = new int[5];
         this.resp = resp;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * El método agrega una persona a la colección.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param persona La persona a agregar a la colección.
      */
     public String getNombre(){
         return nombre;
     }
     
-    public ArrayList<Integer> getRespuestas(){
+    /**
+     * Devuelve un arreglo con las respuestas de la persona.
+     * 
+     * @return Un arreglo de enteros que representa las respuestas de la persona.
+     */
+    public int[] getRespuestas(){
         return resp;
     }
-    
+
+    /**
+     * Devuelve una representación en forma de cadena de la persona, incluyendo su nombre y respuestas.
+     * 
+     * @return Una cadena que representa a la persona.
+     */
     public String toString(){
         String resultado= nombre + " ";
         for(int i= 0; i< resp.length; i++ ){
-        resultado += resp[i];
+            resultado += resp[i];
             if(i< resp.length-1){
-            resultado+= " ";
+                resultado+= " ";
             }
         }
-       return resultado; 
+        return resultado; 
     }
 }
