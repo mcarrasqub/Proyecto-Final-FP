@@ -1,6 +1,5 @@
 import java.util.ArrayList;
-import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 /**
  * Clase donde se guardan los matches creados.
  * 
@@ -51,7 +50,7 @@ public class coleccionMatches
         }
     }
     /**
-     * Este método imprimirá primero cuál es el match que tiene más afinidad.
+     * Este método imprimirá primero cuál es el match que tiene más afinidad y sus respuestas.
      * Luego, si la cantidad de matches es menor que 6, imprimirá todos los siguientes elementos del ArrayList.
      * Por último, si es mayor a 5, imprimirá los siguientes 4 primeros.
      */    
@@ -59,12 +58,14 @@ public class coleccionMatches
         if(matches.isEmpty()){
             System.out.println("Está vacío");
         }
-        System.out.println("El que tiene más afinidad es: " );
+        System.out.println("El match con más afinidad es: " );
         Match primero = matches.get(0);
         System.out.println("match: "+ primero.getNombres() + " con afinidad: " + primero.getAfinidad());
         System.out.println("Sus respuestas a las preguntas respectivamente son: ");
-        System.out.println((primero.getResp1()).toString());
-        System.out.println((primero.getResp2()).toString());
+        String arr1 = Arrays.toString(primero.getResp1());
+        String arr2 = Arrays.toString(primero.getResp2());
+        System.out.println(arr1);
+        System.out.println(arr2);
         System.out.println("Otras opciones: ");
         if(matches.size() < 6){
             for(int i = 1; i < matches.size(); i++){
