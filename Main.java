@@ -3,6 +3,11 @@ import java.util.Scanner;
 *Clase principal, donde se ejecutará el código y se dará la interacción con el usuario.
 */
 public class Main {
+    /**
+     * El método main es el punto de entrada del programa donde se manejará el menú y las interacciones del usuario con cada opción.
+     * 
+     * @param args Arreglo de String 
+     */
     public static void main(String[] args) {
         Coleccion coleccion = new Coleccion();
         Scanner scanner = new Scanner(System.in);
