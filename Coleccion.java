@@ -50,16 +50,20 @@ public class Coleccion
         }
     }
 
-    public void escribirDatos(Persona persona) {
-        try{
-         FileWriter escribir = new FileWriter("encuesta.txt", true);
-         escribir.write('\n' + persona.toString());
-         escribir.close();
-        } catch(IOException e){
+    public void escribirDatos() {
+        File archivo = new File("encuesta.txt");
+        try { 
+            FileWriter escribir = new FileWriter(archivo);
+            for(int i = 0; i < personas.size(); i++){
+                escribir.write(personas.get(i).toString());
+                escribir.write('\n');
+            }
+            escribir.close();
+        } catch (IOException e){
             System.out.println("Archivo no encontrado");
         }
-
     }
+    
     public double match(Persona p1, Persona p2){
         int[] arrP1 = p1.getRespuestas();
         int[] arrP2 = p2.getRespuestas();
