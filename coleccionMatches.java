@@ -79,7 +79,7 @@ public class coleccionMatches
         }
     }
     /**
-     * M+etodo getter del atributo matches.
+     * Método getter del atributo matches.
      */
     public ArrayList<Match> getMatches(){
         return this.matches;
