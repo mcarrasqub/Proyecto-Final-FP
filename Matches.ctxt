@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Matches
+comment1.params=afinidad\ nombres
+comment1.target=Matches(double,\ java.lang.String)
+comment2.params=
+comment2.target=double\ getAfinidad()
+comment3.params=
+comment3.target=java.lang.String\ getNombres()
+numComments=4
