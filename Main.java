@@ -38,8 +38,31 @@ public class Main {
                     System.out.println("Datos escritos en el archivo.");
                     continue;
                 case 'D':
-                    
-                    
+                      if((coleccion.getPersonas().size() < 2)){
+                        System.out.println("No hay suficientes personas para hacer los matches");
+                        continue;
+                    }
+                    coleccionMatches coleccionMatch = new coleccionMatches();
+                    System.out.println("Elige la persona con la que se harán los matches (exactamente): ");
+                    String elegido = scanner.next();
+                    int posElegido = coleccion.buscarPersona(elegido);
+                    if(posElegido == -1){
+                        System.out.println("Esta persona no está");
+                        continue;
+                    }
+                    for(int i = 0; i < (coleccion.getPersonas()).size(); i++){
+                        Persona personai = (coleccion.getPersonas()).get(i);
+                        Persona personaElegida = (coleccion.getPersonas()).get(posElegido);
+                        if(posElegido != i){
+                            double afinidad = coleccion.match(personaElegida, personai);
+                            String nombres = personaElegida.getNombre() + " - " + personai.getNombre();
+                            Match temp =  new Match(afinidad, nombres, personaElegida.getRespuestas(), personai.getRespuestas());
+                            coleccionMatch.agregarMatches(temp);
+                        }
+                    }
+                    coleccionMatch.selectionSortArraylistDescendente();
+                    coleccionMatch.imprimirMatches();
+                    continue;
                 case 'E':
                     System.out.println("Fin del programa.");
                     break;
