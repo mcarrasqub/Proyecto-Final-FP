@@ -73,7 +73,7 @@ public class Main {
     
     }
     /**
-    * 
+    * Este método imprime el menú para mostrarle al usuario las opciones a elegir.
     */
     static void mostrarMenu() {
         System.out.println("\nMenú:");
