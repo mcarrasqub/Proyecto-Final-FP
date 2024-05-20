@@ -42,13 +42,10 @@ public class Main {
                     coleccion.leerDatos();
                     Persona nuevaPersona = new Persona(nombre, respuestas);
                     coleccion.agregarPersona(nuevaPersona);
+                    coleccion.escribirDatos();
                     System.out.println("Persona agregada correctamente.");
                     continue;
                 case 'C':
-                    coleccion.escribirDatos();
-                    System.out.println("Datos escritos en el archivo.");
-                    continue;
-                case 'D':
                       if((coleccion.getPersonas().size() < 2)){
                         System.out.println("No hay suficientes personas para hacer los matches");
                         continue;
@@ -74,7 +71,7 @@ public class Main {
                     coleccionMatch.selectionSortArraylistDescendente();
                     coleccionMatch.imprimirMatches();
                     continue;
-                case 'E':
+                case 'D':
                     System.out.println("Fin del programa.");
                     break;
                 default:
@@ -90,9 +87,8 @@ public class Main {
         System.out.println("\nMenú:");
         System.out.println("A. Leer el archivo con los datos");
         System.out.println("B. Recibir nueva persona con sus respuestas");
-        System.out.println("C. Escribir el conjunto de datos en el archivo");
-        System.out.println("D. Encontrar la persona más afín");
-        System.out.println("E. Terminar");
+        System.out.println("C. Encontrar la persona más afín");
+        System.out.println("D. Terminar");
         System.out.println();
         System.out.print("Ingrese la opción deseada en MAYÚSCULA: ");
     }
