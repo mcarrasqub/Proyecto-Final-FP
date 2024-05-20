@@ -80,7 +80,7 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
-        } while (true);
+        } while (opcion != 'E');
     
     }
     /**
