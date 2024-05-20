@@ -18,14 +18,14 @@ public class coleccionMatches
     }
     
     /**
-     * Método que recibe un Match, y lo agrega en el ArrayList de la colección.
+     * Método que recibe un Matches, y lo agrega en el ArrayList de la colección.
      */
     public void agregarMatches(Match match){
         matches.add(match);
     }
     
     /**
-     * Método el cual ordena el ArrayList de forma descendiente (El mayor de primero) según el atributo afinidad del Match.
+     * Método el cual ordena el ArrayList de forma descendiente (El mayor de primero) según el atributo afinidad del Matches.
      */
     public void selectionSortArraylistDescendente(){
         if(matches.isEmpty()){
@@ -53,6 +53,7 @@ public class coleccionMatches
      * Este método imprimirá primero cuál es el match que tiene más afinidad y sus respuestas.
      * Luego, si la cantidad de matches es menor que 6, imprimirá todos los siguientes elementos del ArrayList.
      * Por último, si es mayor a 5, imprimirá los siguientes 4 primeros.
+     * Imprimirá la afinidad como un porcentaje,y no como un double.
      */    
     public void imprimirMatches(){
         if(matches.isEmpty()){
@@ -60,7 +61,8 @@ public class coleccionMatches
         }
         System.out.println("El match con más afinidad es: " );
         Match primero = matches.get(0);
-        System.out.println("match: "+ primero.getNombres() + " con afinidad: " + primero.getAfinidad());
+        double resultado1= primero.getAfinidad() *100;
+        System.out.println("match: "+ primero.getNombres() + " con afinidad: " + (int)resultado1 +"%");
         System.out.println("Sus respuestas a las preguntas respectivamente son: ");
         String arr1 = Arrays.toString(primero.getResp1());
         String arr2 = Arrays.toString(primero.getResp2());
@@ -70,12 +72,14 @@ public class coleccionMatches
         if(matches.size() < 6){
             for(int i = 1; i < matches.size(); i++){
                 Match matchPosi = matches.get(i);
-                System.out.println("match: " + matchPosi.getNombres() + " - " + matchPosi.getAfinidad());
+                double resultadoi = matchPosi.getAfinidad() *100;
+                System.out.println("match: " + matchPosi.getNombres() + " - " + (int)resultadoi+"%");
             }
         }else{
             for(int i = 1; i < 5; i++){
                 Match matchPosi = matches.get(i);
-                System.out.println("match: "+ matchPosi.getNombres() + " - " + matchPosi.getAfinidad());
+                double resultadoi = matchPosi.getAfinidad() *100;
+                System.out.println("match: "+ matchPosi.getNombres() + " - " +(int)resultadoi + "%");
             } 
         }
     }
