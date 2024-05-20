@@ -18,14 +18,14 @@ public class coleccionMatches
     }
     
     /**
-     * Método que recibe un Matches, y lo agrega en el ArrayList de la colección.
+     * Método que recibe un Match, y lo agrega en el ArrayList de la colección.
      */
     public void agregarMatches(Match match){
         matches.add(match);
     }
     
     /**
-     * Método el cual ordena el ArrayList de forma descendiente (El mayor de primero) según el atributo afinidad del Matches.
+     * Método el cual ordena el ArrayList de forma descendiente (El mayor de primero) según el atributo afinidad del Match.
      */
     public void selectionSortArraylistDescendente(){
         if(matches.isEmpty()){
