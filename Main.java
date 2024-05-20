@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/**
+*Clase principal, donde se ejecutará el código y se dará la interacción con el usuario.
+*/
 public class Main {
     public static void main(String[] args) {
         Coleccion coleccion = new Coleccion();
