@@ -13,7 +13,7 @@ public class Main {
                 case 'A':
                     coleccion.leerDatos();
                     System.out.println("Los datos de su archivo se han leído y almacenado correctamente");
-                
+                    continue;
                 case 'B':
                     System.out.println("ingrese el nombre de la persona a agregar");
                     String nombre = scanner.next();
@@ -28,14 +28,15 @@ public class Main {
                         System.out.println("respuesta " + (i+1) + ": ");
                         respuestas[i] = scanner.nextInt();
                     }
+                    coleccion.leerDatos();
                     Persona nuevaPersona = new Persona(nombre, respuestas);
                     coleccion.agregarPersona(nuevaPersona);
                     System.out.println("Persona agregada correctamente.");
-                
+                    continue;
                 case 'C':
                     coleccion.escribirDatos();
                     System.out.println("Datos escritos en el archivo.");
-                    
+                    continue;
                 case 'D':
                     
                     
