@@ -69,10 +69,12 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
-        } while (opcion != 'E');
+        } while (true);
     
     }
-    
+    /**
+    * 
+    */
     static void mostrarMenu() {
         System.out.println("\nMenú:");
         System.out.println("A. Leer el archivo con los datos");
