@@ -1,6 +1,9 @@
 import java.util.Scanner;
 /**
 *Clase principal, donde se ejecutará el código y se dará la interacción con el usuario.
+*@author Mariana Carrasquilla
+* @author Jhon Anderson Marin
+* @version 1.0
 */
 public class Main {
     /**
